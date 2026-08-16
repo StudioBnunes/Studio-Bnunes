@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Studio BNunes</title>
 
+
     <!-- FONTES -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
 
     <!-- ÍCONES -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
 
     <style>
 
@@ -23,275 +38,533 @@
             box-sizing: border-box;
         }
 
+
         body {
-            background: linear-gradient(135deg, #FAF7F2, #EFE3D8);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #FAF7F2,
+                    #EFE3D8
+                );
+
             color: #5A4A45;
-            font-family: 'Poppins', sans-serif;
+
+            font-family:
+                'Poppins',
+                sans-serif;
+
             min-height: 100vh;
         }
 
+
         .container {
+
             width: 100%;
+
             max-width: 520px;
+
             margin: auto;
+
             padding: 20px 15px;
         }
 
+
         .card {
+
             background: #FBF9F6;
+
             border-radius: 25px;
+
             padding: 24px;
-            box-shadow: 0 8px 30px rgba(110, 80, 65, 0.12);
+
+            box-shadow:
+                0 8px 30px
+                rgba(110, 80, 65, 0.12);
         }
+
 
         /* LOGO */
 
         .logo {
+
             text-align: center;
-            padding: 5px 0 10px;
+
+            padding:
+                5px 0 10px;
         }
 
+
         .logo img {
+
             width: 100%;
+
             max-width: 360px;
+
             height: auto;
+
             display: block;
+
             margin: auto;
         }
+
 
         /* INSTAGRAM */
 
         .instagram {
+
             display: block;
+
             text-align: center;
-            margin: 12px 0 28px;
+
+            margin:
+                12px 0 28px;
+
             padding: 14px;
+
             border-radius: 12px;
+
             background: #F4EAE6;
+
             color: #9B6570;
+
             text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
+
+            font-family:
+                'Montserrat',
+                sans-serif;
+
             font-weight: 600;
-            border: 1px solid #E6D3CE;
+
+            border:
+                1px solid #E6D3CE;
+
             transition: 0.2s;
         }
 
+
         .instagram:hover {
+
             background: #EEDFD9;
         }
 
+
         .instagram i {
+
             font-size: 18px;
+
             margin-right: 8px;
+
             vertical-align: middle;
         }
+
 
         /* TÍTULO */
 
         .titulo {
+
             text-align: center;
+
             color: #8F5C67;
-            font-family: 'Montserrat', sans-serif;
+
+            font-family:
+                'Montserrat',
+                sans-serif;
+
             font-size: 18px;
+
             font-weight: 600;
+
             letter-spacing: 2px;
-            margin: 25px 0 18px;
+
+            margin:
+                25px 0 18px;
         }
+
 
         /* SERVIÇOS */
 
         .servicos {
-            border: 1px solid #E6D8D2;
+
+            border:
+                1px solid #E6D8D2;
+
             border-radius: 15px;
+
             overflow: hidden;
+
             background: #FBF9F6;
         }
 
+
         .servico {
+
             display: flex;
-            justify-content: space-between;
+
+            justify-content:
+                space-between;
+
             align-items: center;
-            padding: 16px 14px;
-            border-bottom: 1px solid #EEE5E0;
+
+            padding:
+                16px 14px;
+
+            border-bottom:
+                1px solid #EEE5E0;
+
             gap: 10px;
         }
 
+
         .servico:last-child {
+
             border-bottom: none;
         }
 
+
         .servico span:first-child {
-            font-family: 'Poppins', sans-serif;
+
+            font-family:
+                'Poppins',
+                sans-serif;
+
             font-size: 14px;
+
             font-weight: 400;
+
             color: #5F504B;
         }
 
+
         .preco {
+
             color: #9B5D6B;
-            font-family: 'Montserrat', sans-serif;
+
+            font-family:
+                'Montserrat',
+                sans-serif;
+
             font-weight: 700;
+
             white-space: nowrap;
         }
+
 
         /* FORMULÁRIO */
 
         label {
+
             display: block;
+
             margin-top: 21px;
+
             margin-bottom: 7px;
-            font-family: 'Montserrat', sans-serif;
+
+            font-family:
+                'Montserrat',
+                sans-serif;
+
             font-size: 14px;
+
             font-weight: 600;
+
             color: #67514C;
         }
 
+
         input,
         select {
+
             width: 100%;
+
             padding: 14px;
-            border: 1px solid #DDCCC5;
+
+            border:
+                1px solid #DDCCC5;
+
             border-radius: 12px;
+
             background: #FFFFFF;
-            font-family: 'Poppins', sans-serif;
+
+            font-family:
+                'Poppins',
+                sans-serif;
+
             font-size: 14px;
+
             color: #5A4A45;
+
             outline: none;
+
             transition: 0.2s;
         }
 
+
         input:focus,
         select:focus {
+
             border-color: #B9828D;
-            box-shadow: 0 0 0 2px rgba(185, 130, 141, 0.10);
+
+            box-shadow:
+                0 0 0 2px
+                rgba(
+                    185,
+                    130,
+                    141,
+                    0.10
+                );
         }
+
 
         /* HORÁRIOS */
 
         .horarios {
+
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 10px;
+
             margin-top: 10px;
         }
 
+
         .horario {
+
             padding: 13px 5px;
+
             background: #FFFFFF;
-            border: 1px solid #DDCCC5;
+
+            border:
+                1px solid #DDCCC5;
+
             border-radius: 10px;
+
             color: #67514C;
-            font-family: 'Montserrat', sans-serif;
+
+            font-family:
+                'Montserrat',
+                sans-serif;
+
             font-size: 13px;
+
             font-weight: 500;
+
             cursor: pointer;
+
             transition: 0.2s;
         }
 
+
         .horario:hover {
+
             background: #F4EAE6;
+
             border-color: #C9A3A9;
         }
 
+
         .horario.selecionado {
+
             background: #A96F7B;
+
             color: #FFFFFF;
+
             border-color: #A96F7B;
         }
+
+
+        /* HORÁRIO OCUPADO */
+
+        .horario.ocupado {
+
+            background: #E5E0DD;
+
+            color: #99908C;
+
+            border-color: #D5CECA;
+
+            cursor: not-allowed;
+
+            opacity: 0.7;
+        }
+
+
+        .horario.ocupado:hover {
+
+            background: #E5E0DD;
+
+            border-color: #D5CECA;
+        }
+
 
         /* BOTÃO WHATSAPP */
 
         .botao {
+
             width: 100%;
+
             border: none;
+
             margin-top: 26px;
+
             padding: 16px;
+
             border-radius: 12px;
+
             background: #A96F7B;
+
             color: #FFFFFF;
-            font-family: 'Montserrat', sans-serif;
+
+            font-family:
+                'Montserrat',
+                sans-serif;
+
             font-size: 15px;
+
             font-weight: 700;
+
             cursor: pointer;
+
             transition: 0.2s;
         }
 
+
         .botao:hover {
+
             background: #8F5C67;
         }
 
+
+        .botao:disabled {
+
+            opacity: 0.7;
+
+            cursor: wait;
+        }
+
+
         .botao i {
+
             font-size: 20px;
+
             margin-right: 8px;
+
             vertical-align: middle;
         }
+
 
         /* LOCALIZAÇÃO */
 
         .localizacao {
+
             text-align: center;
+
             margin-top: 27px;
+
             color: #9B6570;
-            font-family: 'Montserrat', sans-serif;
+
+            font-family:
+                'Montserrat',
+                sans-serif;
+
             font-weight: 600;
+
             font-size: 14px;
         }
 
+
         .localizacao a {
+
             color: #9B6570;
+
             text-decoration: none;
         }
 
+
         .localizacao a:hover {
+
             text-decoration: underline;
         }
+
 
         /* AVISO */
 
         .aviso {
+
             margin-top: 15px;
+
             text-align: center;
-            font-family: 'Poppins', sans-serif;
+
+            font-family:
+                'Poppins',
+                sans-serif;
+
             font-size: 11px;
+
             font-weight: 300;
+
             color: #917C76;
         }
+
 
         /* CELULAR */
 
         @media (max-width: 380px) {
 
             .container {
+
                 padding: 12px;
             }
 
+
             .card {
+
                 padding: 18px;
             }
 
+
             .horarios {
-                grid-template-columns: repeat(2, 1fr);
+
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
+
             .titulo {
+
                 font-size: 16px;
+
                 letter-spacing: 1.5px;
             }
+
         }
 
     </style>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
 
+
     <div class="card">
+
 
         <!-- LOGO -->
 
         <div class="logo">
-            <img src="logo.png" alt="Studio BNunes">
+
+            <img
+                src="imagens/logo.png"
+                alt="Studio BNunes"
+            >
+
         </div>
 
 
@@ -303,15 +576,20 @@
             target="_blank"
             rel="noopener noreferrer"
         >
+
             <i class="fa-brands fa-instagram"></i>
+
             Siga-nos no Instagram
+
         </a>
 
 
         <!-- TÍTULO -->
 
         <h2 class="titulo">
+
             AGENDAMENTO DE HORÁRIOS
+
         </h2>
 
 
@@ -319,45 +597,94 @@
 
         <div class="servicos">
 
+
             <div class="servico">
+
                 <span>Manicure</span>
-                <span class="preco">R$ 25,00</span>
+
+                <span class="preco">
+                    R$ 25,00
+                </span>
+
             </div>
 
+
             <div class="servico">
+
                 <span>Pedicure</span>
-                <span class="preco">R$ 30,00</span>
+
+                <span class="preco">
+                    R$ 30,00
+                </span>
+
             </div>
 
+
             <div class="servico">
+
                 <span>Pé e Mão</span>
-                <span class="preco">R$ 50,00</span>
+
+                <span class="preco">
+                    R$ 50,00
+                </span>
+
             </div>
 
+
             <div class="servico">
+
                 <span>Postiça Realista</span>
-                <span class="preco">R$ 70,00</span>
+
+                <span class="preco">
+                    R$ 70,00
+                </span>
+
             </div>
 
+
             <div class="servico">
+
                 <span>Soft Gel</span>
-                <span class="preco">R$ 100,00</span>
+
+                <span class="preco">
+                    R$ 100,00
+                </span>
+
             </div>
 
+
             <div class="servico">
+
                 <span>Esmaltação em Gel</span>
-                <span class="preco">R$ 50,00</span>
+
+                <span class="preco">
+                    R$ 50,00
+                </span>
+
             </div>
 
+
             <div class="servico">
+
                 <span>Blindagem</span>
-                <span class="preco">R$ 65,00</span>
+
+                <span class="preco">
+                    R$ 65,00
+                </span>
+
             </div>
 
+
             <div class="servico">
+
                 <span>SPA dos Pés</span>
-                <span class="preco">R$ 50,00</span>
+
+                <span class="preco">
+                    R$ 50,00
+                </span>
+
             </div>
+
 
         </div>
 
@@ -365,8 +692,11 @@
         <!-- NOME -->
 
         <label for="nome">
+
             Nome da Cliente:
+
         </label>
+
 
         <input
             type="text"
@@ -378,46 +708,77 @@
         <!-- SERVIÇO -->
 
         <label for="servico">
+
             Serviço Desejado:
+
         </label>
+
 
         <select id="servico">
 
+
             <option value="">
+
                 Selecione...
+
             </option>
+
 
             <option value="Manicure - R$ 25,00">
+
                 Manicure - R$ 25,00
+
             </option>
+
 
             <option value="Pedicure - R$ 30,00">
+
                 Pedicure - R$ 30,00
+
             </option>
+
 
             <option value="Pé e Mão - R$ 50,00">
+
                 Pé e Mão - R$ 50,00
+
             </option>
+
 
             <option value="Postiça Realista - R$ 70,00">
+
                 Postiça Realista - R$ 70,00
+
             </option>
+
 
             <option value="Soft Gel - R$ 100,00">
+
                 Soft Gel - R$ 100,00
+
             </option>
+
 
             <option value="Esmaltação em Gel - R$ 50,00">
+
                 Esmaltação em Gel - R$ 50,00
+
             </option>
+
 
             <option value="Blindagem - R$ 65,00">
+
                 Blindagem - R$ 65,00
+
             </option>
 
+
             <option value="SPA dos Pés - R$ 50,00">
+
                 SPA dos Pés - R$ 50,00
+
             </option>
+
 
         </select>
 
@@ -425,8 +786,11 @@
         <!-- DATA -->
 
         <label for="data">
+
             Escolha o Dia:
+
         </label>
+
 
         <input
             type="date"
@@ -437,50 +801,74 @@
         <!-- HORÁRIOS -->
 
         <label>
+
             Escolha o Horário:
+
         </label>
+
 
         <div class="horarios">
 
-            <button type="button" class="horario" onclick="selecionarHorario(this)">
+
+            <button type="button" class="horario"
+                onclick="selecionarHorario(this)">
                 08:00
             </button>
 
-            <button type="button" class="horario" onclick="selecionarHorario(this)">
+
+            <button type="button" class="horario"
+                onclick="selecionarHorario(this)">
                 09:00
             </button>
 
-            <button type="button" class="horario" onclick="selecionarHorario(this)">
+
+            <button type="button" class="horario"
+                onclick="selecionarHorario(this)">
                 10:00
             </button>
 
-            <button type="button" class="horario" onclick="selecionarHorario(this)">
+
+            <button type="button" class="horario"
+                onclick="selecionarHorario(this)">
                 11:00
             </button>
 
-            <button type="button" class="horario" onclick="selecionarHorario(this)">
+
+            <button type="button" class="horario"
+                onclick="selecionarHorario(this)">
                 12:00
             </button>
 
-            <button type="button" class="horario" onclick="selecionarHorario(this)">
+
+            <button type="button" class="horario"
+                onclick="selecionarHorario(this)">
                 13:00
             </button>
 
-            <button type="button" class="horario" onclick="selecionarHorario(this)">
+
+            <button type="button" class="horario"
+                onclick="selecionarHorario(this)">
                 14:00
             </button>
 
-            <button type="button" class="horario" onclick="selecionarHorario(this)">
+
+            <button type="button" class="horario"
+                onclick="selecionarHorario(this)">
                 15:00
             </button>
 
-            <button type="button" class="horario" onclick="selecionarHorario(this)">
+
+            <button type="button" class="horario"
+                onclick="selecionarHorario(this)">
                 16:00
             </button>
 
-            <button type="button" class="horario" onclick="selecionarHorario(this)">
+
+            <button type="button" class="horario"
+                onclick="selecionarHorario(this)">
                 17:00
             </button>
+
 
         </div>
 
@@ -492,8 +880,11 @@
             class="botao"
             onclick="enviarWhatsApp()"
         >
+
             <i class="fa-brands fa-whatsapp"></i>
+
             Enviar via WhatsApp
+
         </button>
 
 
@@ -508,7 +899,9 @@
                 target="_blank"
                 rel="noopener noreferrer"
             >
+
                 Ver localização
+
             </a>
 
         </div>
@@ -517,93 +910,588 @@
         <!-- AVISO -->
 
         <p class="aviso">
+
             O horário será confirmado pelo WhatsApp.
+
         </p>
 
+
     </div>
+
 
 </div>
 
 
 <script>
 
+
+/* ==========================================
+   CONFIGURAÇÃO SUPABASE
+========================================== */
+
+
+const SUPABASE_URL =
+    "https://gdkkklxhrtsfdcgypjwd.supabase.co";
+
+
+const SUPABASE_KEY =
+    "sb_publishable_uUi42l6DTYB1fGSog67yAg_RMkoOZAt";
+
+
 let horarioSelecionado = "";
+
+let horariosOcupados = [];
+
+
+/* ==========================================
+   SELECIONAR HORÁRIO
+========================================== */
 
 
 function selecionarHorario(botao) {
 
+
+    if (botao.disabled) {
+
+        return;
+
+    }
+
+
     document
         .querySelectorAll(".horario")
         .forEach(function(item) {
-            item.classList.remove("selecionado");
+
+            item.classList.remove(
+                "selecionado"
+            );
+
         });
 
-    botao.classList.add("selecionado");
 
-    horarioSelecionado = botao.innerText.trim();
+    botao.classList.add(
+        "selecionado"
+    );
+
+
+    horarioSelecionado =
+        botao.innerText
+        .replace(" • OCUPADO", "")
+        .trim();
+
 }
 
 
-function enviarWhatsApp() {
+/* ==========================================
+   CARREGAR HORÁRIOS OCUPADOS
+========================================== */
 
-    const nome =
-        document.getElementById("nome").value.trim();
 
-    const servico =
-        document.getElementById("servico").value;
+async function carregarHorarios() {
+
 
     const data =
-        document.getElementById("data").value;
+        document
+        .getElementById("data")
+        .value;
+
+
+    if (!data) {
+
+        return;
+
+    }
+
+
+    horarioSelecionado = "";
+
+    horariosOcupados = [];
+
+
+    const botoes =
+        document
+        .querySelectorAll(".horario");
+
+
+    botoes.forEach(
+        function(botao) {
+
+            botao.disabled = false;
+
+            botao.classList.remove(
+                "selecionado"
+            );
+
+            botao.classList.remove(
+                "ocupado"
+            );
+
+            botao.style.opacity = "";
+
+            botao.style.cursor =
+                "pointer";
+
+            botao.innerHTML =
+                botao.innerHTML
+                .replace(
+                    " • OCUPADO",
+                    ""
+                );
+
+        }
+    );
+
+
+    try {
+
+
+        const resposta =
+            await fetch(
+
+                `${SUPABASE_URL}/rest/v1/agendamentos?data=eq.${data}&select=horario`,
+
+                {
+
+                    method: "GET",
+
+                    headers: {
+
+                        "apikey":
+                            SUPABASE_KEY,
+
+                        "Authorization":
+                            `Bearer ${SUPABASE_KEY}`
+
+                    }
+
+                }
+
+            );
+
+
+        if (!resposta.ok) {
+
+            console.error(
+                await resposta.text()
+            );
+
+            return;
+
+        }
+
+
+        const dados =
+            await resposta.json();
+
+
+        horariosOcupados =
+            dados.map(
+                function(item) {
+
+                    return item.horario;
+
+                }
+            );
+
+
+        botoes.forEach(
+            function(botao) {
+
+
+                const horario =
+                    botao.innerText.trim();
+
+
+                if (
+                    horariosOcupados
+                    .includes(horario)
+                ) {
+
+
+                    botao.disabled =
+                        true;
+
+
+                    botao.classList.add(
+                        "ocupado"
+                    );
+
+
+                    botao.innerHTML =
+                        `${horario} • OCUPADO`;
+
+
+                }
+
+
+            }
+        );
+
+
+    } catch (erro) {
+
+
+        console.error(
+            "Erro ao consultar horários:",
+            erro
+        );
+
+
+    }
+
+}
+
+
+/* ==========================================
+   SALVAR AGENDAMENTO
+========================================== */
+
+
+async function salvarAgendamento(
+    nome,
+    servico,
+    data,
+    horario
+) {
+
+
+    const resposta =
+        await fetch(
+
+            `${SUPABASE_URL}/rest/v1/agendamentos`,
+
+            {
+
+                method: "POST",
+
+                headers: {
+
+                    "apikey":
+                        SUPABASE_KEY,
+
+                    "Authorization":
+                        `Bearer ${SUPABASE_KEY}`,
+
+                    "Content-Type":
+                        "application/json",
+
+                    "Prefer":
+                        "return=representation"
+
+                },
+
+                body:
+                    JSON.stringify({
+
+                        nome:
+                            nome,
+
+                        servico:
+                            servico,
+
+                        data:
+                            data,
+
+                        horario:
+                            horario
+
+                    })
+
+            }
+
+        );
+
+
+    if (!resposta.ok) {
+
+        return false;
+
+    }
+
+
+    return true;
+
+}
+
+
+/* ==========================================
+   ENVIAR WHATSAPP
+========================================== */
+
+
+async function enviarWhatsApp() {
+
+
+    const nome =
+        document
+        .getElementById("nome")
+        .value
+        .trim();
+
+
+    const servico =
+        document
+        .getElementById("servico")
+        .value;
+
+
+    const data =
+        document
+        .getElementById("data")
+        .value;
 
 
     if (!nome) {
-        alert("Digite seu nome.");
+
+        alert(
+            "Digite seu nome."
+        );
+
         return;
+
     }
 
 
     if (!servico) {
-        alert("Escolha um serviço.");
+
+        alert(
+            "Escolha um serviço."
+        );
+
         return;
+
     }
 
 
     if (!data) {
-        alert("Escolha uma data.");
+
+        alert(
+            "Escolha uma data."
+        );
+
         return;
+
     }
 
 
     if (!horarioSelecionado) {
-        alert("Escolha um horário.");
+
+        alert(
+            "Escolha um horário."
+        );
+
         return;
+
     }
 
 
-    const dataFormatada =
-        data.split("-").reverse().join("/");
+    /* CONFERE NOVAMENTE */
+
+    await carregarHorarios();
 
 
-    const mensagem =
-        `Olá! Gostaria de agendar um horário.%0A%0A` +
-        `Nome: ${nome}%0A` +
-        `Serviço: ${servico}%0A` +
-        `Data: ${dataFormatada}%0A` +
-        `Horário: ${horarioSelecionado}`;
+    if (
+        horariosOcupados
+        .includes(
+            horarioSelecionado
+        )
+    ) {
+
+        alert(
+            "Esse horário acabou de ser ocupado. Escolha outro horário."
+        );
+
+        return;
+
+    }
 
 
-    const numeroWhatsApp =
-        "5547933891418";
+    const horario =
+        horarioSelecionado;
 
 
-    const url =
-        `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+    const botao =
+        document
+        .querySelector(".botao");
 
 
-    window.open(url, "_blank");
+    botao.disabled = true;
+
+
+    botao.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin"></i> Confirmando...';
+
+
+    try {
+
+
+        const salvo =
+            await salvarAgendamento(
+
+                nome,
+
+                servico,
+
+                data,
+
+                horario
+
+            );
+
+
+        if (!salvo) {
+
+
+            alert(
+
+                "Esse horário já foi escolhido por outra cliente. Escolha outro horário."
+
+            );
+
+
+            await carregarHorarios();
+
+
+            return;
+
+        }
+
+
+        const dataFormatada =
+            data
+            .split("-")
+            .reverse()
+            .join("/");
+
+
+        const mensagem =
+
+            "Olá! Gostaria de agendar um horário.%0A%0A" +
+
+            "Nome: " +
+            encodeURIComponent(nome) +
+
+            "%0A" +
+
+            "Serviço: " +
+            encodeURIComponent(servico) +
+
+            "%0A" +
+
+            "Data: " +
+            encodeURIComponent(dataFormatada) +
+
+            "%0A" +
+
+            "Horário: " +
+            encodeURIComponent(horario);
+
+
+        const numeroWhatsApp =
+            "5547933891418";
+
+
+        const url =
+
+            `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+
+
+        window.open(
+            url,
+            "_blank"
+        );
+
+
+        await carregarHorarios();
+
+
+    } catch (erro) {
+
+
+        console.error(
+            erro
+        );
+
+
+        alert(
+            "Não foi possível confirmar o agendamento. Tente novamente."
+        );
+
+
+    } finally {
+
+
+        botao.disabled =
+            false;
+
+
+        botao.innerHTML =
+
+            '<i class="fa-brands fa-whatsapp"></i> Enviar via WhatsApp';
+
+    }
+
 }
+
+
+/* ==========================================
+   QUANDO ESCOLHER DATA
+========================================== */
+
+
+document
+    .getElementById("data")
+    .addEventListener(
+        "change",
+        carregarHorarios
+    );
+
+
+/* ==========================================
+   IMPEDIR DATA PASSADA
+========================================== */
+
+
+const campoData =
+    document
+    .getElementById("data");
+
+
+const hoje =
+    new Date();
+
+
+const ano =
+    hoje.getFullYear();
+
+
+const mes =
+    String(
+        hoje.getMonth() + 1
+    )
+    .padStart(
+        2,
+        "0"
+    );
+
+
+const dia =
+    String(
+        hoje.getDate()
+    )
+    .padStart(
+        2,
+        "0"
+    );
+
+
+campoData.min =
+    `${ano}-${mes}-${dia}`;
+
 
 </script>
 
+
 </body>
+
 </html>
