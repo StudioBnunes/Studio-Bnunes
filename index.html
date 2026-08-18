@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Studio BNunes</title>
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- ÍCONES -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #FAF7F2, #EFE3D8);
+            color: #5A4A45;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 520px;
+            margin: auto;
+            padding: 20px 15px;
+        }
+
+        .card {
+            background: #FBF9F6;
+            border-radius: 25px;
+            padding: 24px;
+            box-shadow: 0 8px 30px rgba(110, 80, 65, 0.12);
+        }
+
+        /* =========================
+           LOGO
+        ========================= */
+
+        .logo {
+            text-align: center;
+            padding: 5px 0 10px;
+        }
+
+        .logo img {
+            width: 100%;
+            max-width: 360px;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+
+        /* =========================
+           INSTAGRAM
+        ========================= */
+
+        .instagram {
+            display: block;
+            text-align: center;
+            margin: 12px 0 28px;
+            padding: 14px;
+            border-radius: 12px;
+            background: #F4EAE6;
+            color: #9B6570;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            border: 1px solid #E6D3CE;
+            transition: 0.2s;
+        }
+
+        .instagram:hover {
+            background: #EEDFD9;
+        }
+
+        .instagram i {
+            font-size: 18px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* =========================
+           TÍTULO
+        ========================= */
+
+        .titulo {
+            text-align: center;
+            color: #8F5C67;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin: 25px 0 18px;
+        }
+
+        /* =========================
+           SERVIÇOS
+        ========================= */
+
+        .servicos {
+            border: 1px solid #E6D8D2;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #FBF9F6;
+        }
+
+        .servico {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 14px;
+            border-bottom: 1px solid #EEE5E0;
+            gap: 10px;
+        }
+
+        .servico:last-child {
+            border-bottom: none;
+        }
+
+        .servico span:first-child {
+            font-size: 14px;
+            font-weight: 400;
+            color: #5F504B;
+        }
+
+        .preco {
+            color: #9B5D6B;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        /* =========================
+           FORMULÁRIO
+        ========================= */
+
+        label {
+            display: block;
+            margin-top: 21px;
+            margin-bottom: 7px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #67514C;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #DDCCC5;
+            border-radius: 12px;
+            background: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            color: #5A4A45;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #B9828D;
+            box-shadow: 0 0 0 2px rgba(185, 130, 141, 0.10);
+        }
+
+        /* =========================
+           HORÁRIOS
+        ========================= */
+
+        .horarios {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .horario {
+            padding: 13px 5px;
+            background: #FFFFFF;
+            border: 1px solid #DDCCC5;
+            border-radius: 10px;
+            color: #67514C;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .horario:hover {
+            background: #F4EAE6;
+            border-color: #C9A3A9;
+        }
+
+        .horario.selecionado {
+            background: #A96F7B;
+            color: #FFFFFF;
+            border-color: #A96F7B;
+        }
+
+        .horario.ocupado {
+            background: #E5E0DD;
+            color: #99908C;
+            border-color: #D5CECA;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .horario.ocupado:hover {
+            background: #E5E0DD;
+            border-color: #D5CECA;
+        }
+
+        /* =========================
+           BOTÃO
+        ========================= */
+
+        .botao {
+            width: 100%;
+            border: none;
+            margin-top: 26px;
+            padding: 16px;
+            border-radius: 12px;
+            background: #A96F7B;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .botao:hover {
+            background: #8F5C67;
+        }
+
+        .botao:disabled {
+            opacity: 0.7;
+            cursor: wait;
+        }
+
+        .botao i {
+            font-size: 20px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* =========================
+           LOCALIZAÇÃO
+        ========================= */
+
+        .localizacao {
+            text-align: center;
+            margin-top: 27px;
+            color: #9B6570;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .localizacao a {
+            color: #9B6570;
+            text-decoration: none;
+        }
+
+        .localizacao a:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================
+           AVISO
+        ========================= */
+
+        .aviso {
+            margin-top: 15px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 11px;
+            font-weight: 300;
+            color: #917C76;
+        }
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 380px) {
+
+            .container {
+                padding: 12px;
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+            .horarios {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .titulo {
+                font-size: 16px;
+                letter-spacing: 1.5px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <!-- =========================
+             LOGO
+        ========================= -->
+
+        <div class="logo">
+
+            <img
+                src="./imagens/logo.png"
+                alt="Studio BNunes"
+                onerror="this.style.display='none';"
+            >
+
+        </div>
+
+
+        <!-- =========================
+             INSTAGRAM
+        ========================= -->
+
+        <a
+            class="instagram"
+            href="https://www.instagram.com/studio_bnunes"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <i class="fa-brands fa-instagram"></i>
+
+            Siga-nos no Instagram
+
+        </a>
+
+
+        <!-- =========================
+             TÍTULO
+        ========================= -->
+
+        <h2 class="titulo">
+            AGENDAMENTO DE HORÁRIOS
+        </h2>
+
+
+        <!-- =========================
+             SERVIÇOS
+        ========================= -->
+
+        <div class="servicos">
+
+            <div class="servico">
+                <span>Manicure</span>
+                <span class="preco">R$ 25,00</span>
+            </div>
+
+            <div class="servico">
+                <span>Pedicure</span>
+                <span class="preco">R$ 30,00</span>
+            </div>
+
+            <div class="servico">
+                <span>Pé e Mão</span>
+                <span class="preco">R$ 50,00</span>
+            </div>
+
+            <div class="servico">
+                <span>Postiça Realista</span>
+                <span class="preco">R$ 70,00</span>
+            </div>
+
+            <div class="servico">
+                <span>Soft Gel</span>
+                <span class="preco">R$ 100,00</span>
+            </div>
+
+            <div class="servico">
+                <span>Esmaltação em Gel</span>
+                <span class="preco">R$ 50,00</span>
+            </div>
+
+            <div class="servico">
+                <span>Blindagem</span>
+                <span class="preco">R$ 65,00</span>
+            </div>
+
+            <div class="servico">
+                <span>SPA dos Pés</span>
+                <span class="preco">R$ 50,00</span>
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             NOME
+        ========================= -->
+
+        <label for="nome">
+            Nome da Cliente:
+        </label>
+
+        <input
+            type="text"
+            id="nome"
+            placeholder="Digite seu nome"
+            autocomplete="name"
+        >
+
+
+        <!-- =========================
+             SERVIÇO
+        ========================= -->
+
+        <label for="servico">
+            Serviço Desejado:
+        </label>
+
+        <select id="servico">
+
+            <option value="">
+                Selecione...
+            </option>
+
+            <option value="Manicure - R$ 25,00">
+                Manicure - R$ 25,00
+            </option>
+
+            <option value="Pedicure - R$ 30,00">
+                Pedicure - R$ 30,00
+            </option>
+
+            <option value="Pé e Mão - R$ 50,00">
+                Pé e Mão - R$ 50,00
+            </option>
+
+            <option value="Postiça Realista - R$ 70,00">
+                Postiça Realista - R$ 70,00
+            </option>
+
+            <option value="Soft Gel - R$ 100,00">
+                Soft Gel - R$ 100,00
+            </option>
+
+            <option value="Esmaltação em Gel - R$ 50,00">
+                Esmaltação em Gel - R$ 50,00
+            </option>
+
+            <option value="Blindagem - R$ 65,00">
+                Blindagem - R$ 65,00
+            </option>
+
+            <option value="SPA dos Pés - R$ 50,00">
+                SPA dos Pés - R$ 50,00
+            </option>
+
+        </select>
+
+
+        <!-- =========================
+             DATA
+        ========================= -->
+
+        <label for="data">
+            Escolha o Dia:
+        </label>
+
+        <input
+            type="date"
+            id="data"
+        >
+
+
+        <!-- =========================
+             HORÁRIOS
+        ========================= -->
+
+        <label>
+            Escolha o Horário:
+        </label>
+
+        <div class="horarios">
+
+            <button type="button" class="horario">
+                08:00
+            </button>
+
+            <button type="button" class="horario">
+                09:00
+            </button>
+
+            <button type="button" class="horario">
+                10:00
+            </button>
+
+            <button type="button" class="horario">
+                11:00
+            </button>
+
+            <button type="button" class="horario">
+                12:00
+            </button>
+
+            <button type="button" class="horario">
+                13:00
+            </button>
+
+            <button type="button" class="horario">
+                14:00
+            </button>
+
+            <button type="button" class="horario">
+                15:00
+            </button>
+
+            <button type="button" class="horario">
+                16:00
+            </button>
+
+            <button type="button" class="horario">
+                17:00
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             WHATSAPP
+        ========================= -->
+
+        <button
+            type="button"
+            class="botao"
+            id="botaoEnviar"
+            onclick="enviarWhatsApp()"
+        >
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Enviar via WhatsApp
+
+        </button>
+
+
+        <!-- =========================
+             LOCALIZAÇÃO
+        ========================= -->
+
+        <div class="localizacao">
+
+            📍
+
+            <a
+                href="https://www.google.com/maps"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Ver localização
+            </a>
+
+        </div>
+
+
+        <!-- =========================
+             AVISO
+        ========================= -->
+
+        <p class="aviso">
+            O horário será confirmado pelo WhatsApp.
+        </p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ==========================================
+   CONFIGURAÇÃO SUPABASE
+========================================== */
+
+const SUPABASE_URL =
+    "https://gdkkklxhrtsfdcgypjwd.supabase.co";
+
+const SUPABASE_KEY =
+    "sb_publishable_uUi42l6DTYB1fGSog67yAg_RMkoOZAt";
+
+
+/* ==========================================
+   VARIÁVEIS
+========================================== */
+
+let horarioSelecionado = "";
+
+let horariosOcupados = [];
+
+
+/* ==========================================
+   PEGAR BOTÕES
+========================================== */
+
+function pegarBotoesHorarios() {
+
+    return document.querySelectorAll(".horario");
+
+}
+
+
+/* ==========================================
+   SELECIONAR HORÁRIO
+========================================== */
+
+function selecionarHorario(botao) {
+
+    if (botao.disabled) {
+        return;
+    }
+
+    document
+        .querySelectorAll(".horario")
+        .forEach(function(item) {
+
+            item.classList.remove("selecionado");
+
+        });
+
+
+    botao.classList.add("selecionado");
+
+
+    horarioSelecionado =
+        botao.dataset.horario || botao.innerText.trim();
+
+}
+
+
+/* ==========================================
+   CONFIGURAR BOTÕES
+========================================== */
+
+pegarBotoesHorarios().forEach(function(botao) {
+
+    botao.dataset.horario =
+        botao.innerText.trim();
+
+    botao.addEventListener(
+        "click",
+        function() {
+
+            selecionarHorario(botao);
+
+        }
+    );
+
+});
+
+
+/* ==========================================
+   CARREGAR HORÁRIOS OCUPADOS
+========================================== */
+
+async function carregarHorarios() {
+
+    const data =
+        document.getElementById("data").value;
+
+
+    if (!data) {
+        return;
+    }
+
+
+    /*
+       IMPORTANTE:
+       Não apagamos o horário selecionado aqui.
+       Isso corrige o problema que estava acontecendo
+       antes de salvar.
+    */
+
+
+    horariosOcupados = [];
+
+
+    const botoes =
+        pegarBotoesHorarios();
+
+
+    botoes.forEach(function(botao) {
+
+        const horarioOriginal =
+            botao.dataset.horario;
+
+        botao.disabled = false;
+
+        botao.classList.remove("ocupado");
+
+        botao.classList.remove("selecionado");
+
+        botao.innerText =
+            horarioOriginal;
+
+    });
+
+
+    try {
+
+        const resposta =
+            await fetch(
+
+                `${SUPABASE_URL}/rest/v1/agendamentos?data=eq.${encodeURIComponent(data)}&select=horario`,
+
+                {
+
+                    method: "GET",
+
+                    headers: {
+
+                        "apikey":
+                            SUPABASE_KEY,
+
+                        "Authorization":
+                            `Bearer ${SUPABASE_KEY}`,
+
+                        "Accept":
+                            "application/json"
+
+                    }
+
+                }
+
+            );
+
+
+        if (!resposta.ok) {
+
+            const erroTexto =
+                await resposta.text();
+
+            console.error(
+                "Erro ao consultar Supabase:",
+                erroTexto
+            );
+
+            return;
+
+        }
+
+
+        const dados =
+            await resposta.json();
+
+
+        horariosOcupados =
+            dados
+                .map(function(item) {
+
+                    return String(
+                        item.horario
+                    ).substring(0, 5);
+
+                });
+
+
+        botoes.forEach(function(botao) {
+
+            const horario =
+                botao.dataset.horario;
+
+
+            if (
+                horariosOcupados.includes(
+                    horario
+                )
+            ) {
+
+                botao.disabled = true;
+
+                botao.classList.add(
+                    "ocupado"
+                );
+
+                botao.classList.remove(
+                    "selecionado"
+                );
+
+                botao.innerText =
+                    `${horario} • OCUPADO`;
+
+
+                if (
+                    horarioSelecionado ===
+                    horario
+                ) {
+
+                    horarioSelecionado = "";
+
+                }
+
+            }
+
+        });
+
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao consultar horários:",
+            erro
+        );
+
+    }
+
+}
+
+
+/* ==========================================
+   SALVAR AGENDAMENTO
+========================================== */
+
+async function salvarAgendamento(
+    nome,
+    servico,
+    data,
+    horario
+) {
+
+    try {
+
+        console.log(
+            "Enviando agendamento:",
+            {
+                nome,
+                servico,
+                data,
+                horario
+            }
+        );
+
+
+        const resposta =
+            await fetch(
+
+                `${SUPABASE_URL}/rest/v1/agendamentos`,
+
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "apikey":
+                            SUPABASE_KEY,
+
+                        "Authorization":
+                            `Bearer ${SUPABASE_KEY}`,
+
+                        "Content-Type":
+                            "application/json",
+
+                        "Prefer":
+                            "return=minimal"
+
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            nome:
+                                nome,
+
+                            servico:
+                                servico,
+
+                            data:
+                                data,
+
+                            horario:
+                                horario
+
+                        })
+
+                }
+
+            );
+
+
+        const texto =
+            await resposta.text();
+
+
+        console.log(
+            "STATUS SUPABASE:",
+            resposta.status
+        );
+
+
+        console.log(
+            "RESPOSTA SUPABASE:",
+            texto
+        );
+
+
+        if (!resposta.ok) {
+
+            /*
+               409 = horário duplicado
+            */
+
+            if (
+                resposta.status === 409
+            ) {
+
+                alert(
+                    "Esse horário já foi escolhido por outra cliente. Escolha outro horário."
+                );
+
+                return false;
+
+            }
+
+
+            /*
+               Mostra o erro real para
+               conseguirmos identificar qualquer
+               problema restante.
+            */
+
+            console.error(
+                "ERRO AO SALVAR:",
+                texto
+            );
+
+
+            alert(
+                "Erro ao salvar o agendamento.\n\n" +
+                "Código: " +
+                resposta.status +
+                "\n\n" +
+                texto
+            );
+
+
+            return false;
+
+        }
+
+
+        return true;
+
+
+    } catch (erro) {
+
+        console.error(
+            "Erro de conexão:",
+            erro
+        );
+
+
+        alert(
+            "Não foi possível conectar ao Supabase.\n\n" +
+            erro.message
+        );
+
+
+        return false;
+
+    }
+
+}
+
+
+/* ==========================================
+   ENVIAR WHATSAPP
+========================================== */
+
+async function enviarWhatsApp() {
+
+    const nome =
+        document
+        .getElementById("nome")
+        .value
+        .trim();
+
+
+    const servico =
+        document
+        .getElementById("servico")
+        .value;
+
+
+    const data =
+        document
+        .getElementById("data")
+        .value;
+
+
+    /*
+       Guardamos o horário ANTES de qualquer
+       consulta ao Supabase.
+    */
+
+    const horario =
+        horarioSelecionado;
+
+
+    /* =========================
+       VALIDAÇÕES
+    ========================= */
+
+    if (!nome) {
+
+        alert(
+            "Digite seu nome."
+        );
+
+        return;
+
+    }
+
+
+    if (!servico) {
+
+        alert(
+            "Escolha um serviço."
+        );
+
+        return;
+
+    }
+
+
+    if (!data) {
+
+        alert(
+            "Escolha uma data."
+        );
+
+        return;
+
+    }
+
+
+    if (!horario) {
+
+        alert(
+            "Escolha um horário."
+        );
+
+        return;
+
+    }
+
+
+    /* =========================
+       VERIFICAÇÃO DE SEGURANÇA
+    ========================= */
+
+    const dataAtual =
+        document
+        .getElementById("data")
+        .value;
+
+
+    /*
+       Consulta novamente os horários,
+       mas NÃO altera o horário que o cliente
+       acabou de selecionar.
+    */
+
+    await verificarHorarioIndividual(
+        dataAtual,
+        horario
+    );
+
+
+    /*
+       Se o horário já estiver ocupado,
+       não tenta inserir.
+    */
+
+    if (
+        horariosOcupados.includes(
+            horario
+        )
+    ) {
+
+        alert(
+            "Esse horário já foi escolhido por outra cliente. Escolha outro horário."
+        );
+
+
+        await carregarHorarios();
+
+
+        return;
+
+    }
+
+
+    /* =========================
+       BOTÃO
+    ========================= */
+
+    const botao =
+        document.getElementById(
+            "botaoEnviar"
+        );
+
+
+    botao.disabled = true;
+
+
+    botao.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin"></i> Confirmando...';
+
+
+    try {
+
+        /* =========================
+           SALVAR
+        ========================= */
+
+        const salvo =
+            await salvarAgendamento(
+
+                nome,
+
+                servico,
+
+                data,
+
+                horario
+
+            );
+
+
+        if (!salvo) {
+
+            return;
+
+        }
+
+
+        /* =========================
+           DATA FORMATADA
+        ========================= */
+
+        const dataFormatada =
+            data
+            .split("-")
+            .reverse()
+            .join("/");
+
+
+        /* =========================
+           MENSAGEM WHATSAPP
+        ========================= */
+
+        const mensagem =
+            "Olá! Gostaria de agendar um horário.\n\n" +
+            "Nome: " +
+            nome +
+            "\n" +
+            "Serviço: " +
+            servico +
+            "\n" +
+            "Data: " +
+            dataFormatada +
+            "\n" +
+            "Horário: " +
+            horario;
+
+
+        const numeroWhatsApp =
+            "5547933891418";
+
+
+        const url =
+            "https://wa.me/" +
+            numeroWhatsApp +
+            "?text=" +
+            encodeURIComponent(
+                mensagem
+            );
+
+
+        /*
+           Abre WhatsApp
+        */
+
+        window.open(
+            url,
+            "_blank"
+        );
+
+
+        /*
+           Atualiza os horários depois
+           de salvar com sucesso.
+        */
+
+        horarioSelecionado = "";
+
+        await carregarHorarios();
+
+
+    } catch (erro) {
+
+        console.error(
+            "Erro no agendamento:",
+            erro
+        );
+
+
+        alert(
+            "Não foi possível confirmar o agendamento.\n\n" +
+            erro.message
+        );
+
+
+    } finally {
+
+        botao.disabled = false;
+
+
+        botao.innerHTML =
+            '<i class="fa-brands fa-whatsapp"></i> Enviar via WhatsApp';
+
+    }
+
+}
+
+
+/* ==========================================
+   VERIFICAR APENAS UM HORÁRIO
+========================================== */
+
+async function verificarHorarioIndividual(
+    data,
+    horario
+) {
+
+    try {
+
+        const resposta =
+            await fetch(
+
+                `${SUPABASE_URL}/rest/v1/agendamentos?data=eq.${encodeURIComponent(data)}&horario=eq.${encodeURIComponent(horario)}&select=horario`,
+
+                {
+
+                    method: "GET",
+
+                    headers: {
+
+                        "apikey":
+                            SUPABASE_KEY,
+
+                        "Authorization":
+                            `Bearer ${SUPABASE_KEY}`,
+
+                        "Accept":
+                            "application/json"
+
+                    }
+
+                }
+
+            );
+
+
+        if (!resposta.ok) {
+
+            const texto =
+                await resposta.text();
+
+            console.error(
+                "Erro na verificação:",
+                texto
+            );
+
+            return;
+
+        }
+
+
+        const dados =
+            await resposta.json();
+
+
+        /*
+           Atualiza somente a lista de horários
+           ocupados.
+        */
+
+        if (
+            dados.length > 0
+        ) {
+
+            if (
+                !horariosOcupados.includes(
+                    horario
+                )
+            ) {
+
+                horariosOcupados.push(
+                    horario
+                );
+
+            }
+
+        } else {
+
+            horariosOcupados =
+                horariosOcupados.filter(
+                    function(item) {
+
+                        return item !== horario;
+
+                    }
+                );
+
+        }
+
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao verificar horário:",
+            erro
+        );
+
+    }
+
+}
+
+
+/* ==========================================
+   QUANDO ESCOLHER DATA
+========================================== */
+
+document
+    .getElementById("data")
+    .addEventListener(
+        "change",
+        function() {
+
+            horarioSelecionado = "";
+
+            carregarHorarios();
+
+        }
+    );
+
+
+/* ==========================================
+   IMPEDIR DATA PASSADA
+========================================== */
+
+const campoData =
+    document.getElementById(
+        "data"
+    );
+
+
+const hoje =
+    new Date();
+
+
+const ano =
+    hoje.getFullYear();
+
+
+const mes =
+    String(
+        hoje.getMonth() + 1
+    ).padStart(
+        2,
+        "0"
+    );
+
+
+const dia =
+    String(
+        hoje.getDate()
+    ).padStart(
+        2,
+        "0"
+    );
+
+
+campoData.min =
+    `${ano}-${mes}-${dia}`;
+
+
+/* ==========================================
+   CARREGAR HORÁRIOS SE JÁ HOUVER DATA
+========================================== */
+
+if (campoData.value) {
+
+    carregarHorarios();
+
+}
+
+</script>
+
+</body>
+
+</html>
